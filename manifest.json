@@ -1,0 +1,10 @@
+{
+  "name": "My Custom Tab Page",
+  "version": "1.0",
+  "description": "A custom tab page for Google Chrome",
+  "manifest_version": 3,
+  "chrome_url_overrides": {
+    "newtab": "popup.html"
+  },
+  "permissions": ["tabs", "bookmarks"]
+}

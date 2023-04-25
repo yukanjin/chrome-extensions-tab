@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>自定义新标签页</title>
+    <meta charset="UTF-8">
+    <style>
+      body {
+        font-family: sans-serif;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0;
+      }
+      
+      #tree {
+        margin: 20px;
+      }
+      
+      .bookmark-folder {
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 5px;
+      }
+      
+      .bookmark-link {
+        margin-left: 20px;
+        color: #666;
+      }
+      
+      .bookmark-link:hover {
+        color: #000;
+        text-decoration: underline;
+      }
+      
+      .bookmark-icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+        vertical-align: middle;
+      }
+      
+      .bookmark-search {
+        margin: 10px;
+      }
+      
+      .bookmark-search input[type="text"] {
+        padding: 5px;
+        border: 1px solid #ccc;
+        width: 200px;
+        font-size: 14px;
+        margin-right: 10px;
+      }
+      
+      .bookmark-toggle {
+        margin-right: 5px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      
+      .bookmark-toggle-expanded:before {
+        content: "-";
+      }
+      
+      .bookmark-toggle-collapsed:before {
+        content: "+";
+      }
+      
+      .bookmark-toggle-expanded + ul {
+        display: block;
+      }
+      
+      .bookmark-toggle-collapsed + ul {
+        display: none;
+      }
+      
+      .bookmark-tree {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .sidebar {
+  width: 300px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f0f0f0;
+  overflow-y: scroll;
+}
+
+.github-trending {
+  padding: 20px;
+}
+
+.trending-options {
+  margin-bottom: 20px;
+}
+
+.trending-options label {
+  margin-right: 20px;
+}
+
+.trending-list li {
+  margin-bottom: 10px;
+}
+
+.trending-list a {
+  color: #333;
+  text-decoration: none;
+}
+
+.trending-list a:hover {
+  text-decoration: underline;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="left">
+      <div class="bookmark-search">
+        <input type="text" placeholder="搜索书签...">
+      </div>
+      <div id="tree"></div>
+    </div>
+    <div>
+      <div class="sidebar">
+        <div class="github-trending">
+          <h2>GitHub Trending</h2>
+          <div class="trending-options">
+            <label><input type="radio" name="trending-option" value="daily"> Daily</label>
+            <label><input type="radio" name="trending-option" value="weekly" checked> Weekly</label>
+            <label><input type="radio" name="trending-option" value="monthly"> Monthly</label>
+          </div>
+          <ul class="trending-list"></ul>
+        </div>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
